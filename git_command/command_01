@@ -1,0 +1,45 @@
+
+**获取远程分支**
+1.  git add .  //把当前所有修改添加到本地仓库
+
+2.  git commit -m "提交信息"  //把当前添加到仓库的修改提交到本地仓库
+
+（这里说一下两者的区别，第一个是你仅仅把一些修改添加到本地仓库，并没有生成一条提交记录。commit的意思就是，把当前所有修改生成一条提交记录，然后提交到本地仓库。这样的话你就可以根据这条提交记录去回退你的代码版本。）
+
+3.  git pull  //拉取远仓库的代码
+
+4.  git branch -a   //查看所有分支（如果你已经知道你要合并的分支名字，可以忽略这一步。）
+
+5.  git checkout 分支名  //切换到你要合并的分支，如果本地没有这条分支则会在本地创建一条分支
+
+
+
+
+查看本地分支命令:
+git branch
+
+查看远程分支命令:
+git branch -a
+
+当我想从远程仓库里拉取一条本地不存在的分支时：
+
+git checkout -b 本地分支名 origin/远程分支名
+1.这个将会自动创建一个新的本地分支，并与指定的远程分支关联起来。
+
+例如远程仓库里有个分支dev2,我本地没有该分支，我要把dev2拉到我本地：
+git checkout -b dev2 origin/dev2
+
+1 .若成功，将会在本地创建新分支dev2,并自动切到dev2上。
+
+2.如果出现提示：
+
+fatal: Cannot update paths and switch to branch 'dev2' at the same time.
+Did you intend to checkout 'origin/dev2' which can not be resolved as commit?
+
+3.表示拉取不成功。我们需要先执行
+
+git fetch
+4.然后再执行
+
+
+git checkout -b 本地分支名 origin/远程分支名
