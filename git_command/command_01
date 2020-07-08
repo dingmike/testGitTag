@@ -1,5 +1,5 @@
+# **一、获取远程分支**
 
-**获取远程分支**
 1.  git add .  //把当前所有修改添加到本地仓库
 
 2.  git commit -m "提交信息"  //把当前添加到仓库的修改提交到本地仓库
@@ -14,6 +14,7 @@
 
 
 
+# **二、git相关命令**
 
 查看本地分支命令:
 git branch
@@ -41,6 +42,11 @@ Did you intend to checkout 'origin/dev2' which can not be resolved as commit?
 git fetch
 4.然后再执行
 
-
 git checkout -b 本地分支名 origin/远程分支名
 https://www.crifan.com/domestic_best_online_web_english_tts_api/
+
+
+
+5.git提交指定文件
+
+git commit -o wenjianming.js wenjianming2.js -m '注释信息'  
